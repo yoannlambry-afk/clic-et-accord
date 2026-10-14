@@ -1,0 +1,30 @@
+{
+  "name": "clic-et-accord",
+  "version": "1.0.0",
+  "description": "Accordeur guitare, métronome et setlist du groupe bibeO",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoannlambry-afk/clic-et-accord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yoannlambry-afk/clic-et-accord/issues"
+  },
+  "homepage": "https://github.com/yoannlambry-afk/clic-et-accord#readme",
+  "private": "true",
+  "dependencies": {
+    "@capacitor/cli": "^7.6.9",
+    "@capacitor/core": "^7.6.9",
+    "@capacitor/ios": "^7.6.9"
+  }
+}
