@@ -1,0 +1,11 @@
+{
+  "name": "bibeO · Clic & Accord",
+  "short_name": "Clic & Accord",
+  "description": "Accordeur guitare, métronome et setlist du groupe bibeO",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbf8f9",
+  "theme_color": "#b3244f",
+  "lang": "fr",
+  "icons": [{ "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }]
+}
