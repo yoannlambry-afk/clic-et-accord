@@ -14,17 +14,20 @@ Accordeur guitare, métronome et setlist du groupe bibeO.
 
 ## Installer l'appli sur un iPhone
 
-1. Ouvrir le projet : `open ios/App/App.xcodeproj`
-2. Dans Xcode, menu **Xcode › Settings › Accounts** : ajouter son identifiant Apple si ce n'est pas déjà fait.
-3. Sélectionner la cible **App**, onglet **Signing & Capabilities** : cocher *Automatically manage signing* et choisir son équipe (son identifiant Apple).
-4. Brancher l'iPhone, le choisir en haut de la fenêtre comme destination, puis **Run** (▶).
-5. Sur l'iPhone, la première fois : **Réglages › Général › VPN et gestion de l'appareil**, faire confiance au développeur.
+Le Mac a déjà le certificat de développement et l'équipe (réglée dans le projet). iPhone branché et déverrouillé :
 
-Avec un identifiant Apple gratuit, l'appli expire au bout de 7 jours : il suffit de refaire un Run depuis Xcode. Avec un compte développeur payant (99 €/an), elle reste installée un an et peut être distribuée via TestFlight.
+```bash
+xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug \
+  -destination 'generic/platform=iOS' -derivedDataPath ios/App/DerivedData -allowProvisioningUpdates build
+xcrun devicectl list devices
+xcrun devicectl device install app --device <identifiant de l'iPhone> ios/App/DerivedData/Build/Products/Debug-iphoneos/App.app
+```
+
+Avec un identifiant Apple gratuit, l'appli expire au bout de 7 jours : il suffit de la réinstaller. Avec un compte développeur payant (99 €/an), elle reste installée un an et peut être distribuée via TestFlight.
 
 ## Mettre à jour
 
 Toute modification se fait dans `docs/index.html`.
 
 - Web : `git commit` puis `git push`, GitHub Pages redéploie en une minute.
-- iPhone : `npx cap copy ios` puis Run dans Xcode.
+- iPhone : `npx cap copy ios` puis les commandes d'installation ci-dessus.
